@@ -1,5 +1,7 @@
 # 🛡️ Phishing Awareness Training
+## Project Screenshot
 
+![webpage](Webpage.png)
 ## 📌 Project Description
 
 Phishing Awareness Training is an interactive cybersecurity webpage developed using HTML, CSS, and JavaScript in VS Code. The project helps users understand phishing attacks, identify fake emails and websites, learn social engineering tactics, and follow online safety best practices.
