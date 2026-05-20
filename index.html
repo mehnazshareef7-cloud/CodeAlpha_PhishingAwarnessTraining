@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Phishing Awareness Training</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial, sans-serif;
+            background:#f4f7fb;
+            color:#333;
+        }
+
+        header{
+            background:linear-gradient(to right,#0f2027,#203a43,#2c5364);
+            color:white;
+            text-align:center;
+            padding:40px;
+        }
+
+        header h1{
+            font-size:45px;
+            margin-bottom:10px;
+        }
+
+        header p{
+            font-size:20px;
+        }
+
+        .container{
+            width:90%;
+            margin:auto;
+            padding:20px;
+        }
+
+        .card{
+            background:white;
+            padding:25px;
+            margin:25px 0;
+            border-radius:15px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.2);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:scale(1.02);
+        }
+
+        h2{
+            color:#1b3c59;
+            margin-bottom:15px;
+        }
+
+        p{
+            line-height:1.8;
+            font-size:18px;
+        }
+
+        ul{
+            margin-left:20px;
+            line-height:2;
+            font-size:18px;
+        }
+
+        img{
+            width:100%;
+            margin-top:15px;
+            border-radius:10px;
+        }
+
+        button{
+            background:#007bff;
+            color:white;
+            border:none;
+            padding:12px 20px;
+            margin:8px;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+            transition:0.3s;
+        }
+
+        button:hover{
+            background:#0056b3;
+        }
+
+        .result{
+            font-weight:bold;
+            margin-top:10px;
+            color:green;
+            font-size:18px;
+        }
+
+        .tip-box{
+            background:#e8f4ff;
+            padding:15px;
+            border-left:5px solid blue;
+            margin-top:15px;
+            border-radius:5px;
+        }
+
+        footer{
+            background:#203a43;
+            color:white;
+            text-align:center;
+            padding:15px;
+            margin-top:30px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>🛡️ Phishing Awareness Training</h1>
+
+        <p>
+            Learn how to identify phishing attacks and stay safe online
+        </p>
+
+    </header>
+
+
+    <div class="container">
+
+        <!-- INTRODUCTION -->
+
+        <div class="card">
+
+            <h2>📌 What is Phishing?</h2>
+
+            <p>
+                Phishing is a cyber attack where hackers try to steal
+                sensitive information such as passwords, bank details,
+                and OTPs using fake emails, websites, or messages.
+            </p>
+
+            <img src="image/pexels-mikhail-nilov-6963061.jpg" alt="Phishing">
+
+        </div>
+
+
+        <!-- EMAIL RECOGNITION -->
+
+        <div class="card">
+
+            <h2>📧 How to Recognize Phishing Emails</h2>
+
+            <ul>
+                <li>Unknown sender email address</li>
+                <li>Urgent messages asking for quick action</li>
+                <li>Spelling and grammar mistakes</li>
+                <li>Suspicious links and attachments</li>
+                <li>Fake login pages</li>
+            </ul>
+
+            <button onclick="showTip()">
+                Show Safety Tip
+            </button>
+
+            <div id="tip" class="tip-box"></div>
+
+        </div>
+
+
+        <!-- FAKE WEBSITE -->
+
+        <div class="card">
+
+            <h2>🌐 Fake Website Detection</h2>
+
+            <ul>
+                <li>Check website spelling carefully</li>
+                <li>Look for HTTPS security</li>
+                <li>Avoid unknown websites</li>
+                <li>Never enter passwords on suspicious pages</li>
+            </ul>
+
+            <img src="image/pexels-alesia-gritsuk-3574586-5352201.jpg" alt="Fake Website">
+
+        </div>
+
+
+        <!-- SOCIAL ENGINEERING -->
+
+        <div class="card">
+
+            <h2>🧠 Social Engineering Tactics</h2>
+
+            <p>
+                Attackers manipulate people emotionally using fear,
+                urgency, fake rewards, and fake customer support
+                messages.
+            </p>
+
+            <img src="image/pexels-tima-miroshnichenko-5380649.jpg" alt="Hacker">
+
+        </div>
+
+
+        <!-- BEST PRACTICES -->
+
+        <div class="card">
+
+            <h2>✅ Best Practices</h2>
+
+            <ul>
+                <li>Use strong passwords</li>
+                <li>Enable two-factor authentication</li>
+                <li>Never share OTPs</li>
+                <li>Verify suspicious emails</li>
+                <li>Update antivirus regularly</li>
+            </ul>
+
+        </div>
+
+
+        <!-- QUIZ SECTION -->
+
+        <div class="card">
+
+            <h2>🎯 Interactive Quiz</h2>
+
+            <!-- QUIZ 1 -->
+
+            <p><b>1. Should you click unknown email links?</b></p>
+
+            <button onclick="quiz1('wrong')">Yes</button>
+
+            <button onclick="quiz1('correct')">No</button>
+
+            <p id="result1" class="result"></p>
+
+            <hr><br>
+
+
+            <!-- QUIZ 2 -->
+
+            <p><b>2. Which is a strong password?</b></p>
+
+            <button onclick="quiz2('wrong')">123456</button>
+
+            <button onclick="quiz2('correct')">M@hnaz#2025</button>
+
+            <button onclick="quiz2('wrong')">password</button>
+
+            <p id="result2" class="result"></p>
+
+            <hr><br>
+
+
+            <!-- QUIZ 3 -->
+
+            <p><b>3. What should you check before login?</b></p>
+
+            <button onclick="quiz3('correct')">Website URL</button>
+
+            <button onclick="quiz3('wrong')">Website Color</button>
+
+            <button onclick="quiz3('wrong')">Font Size</button>
+
+            <p id="result3" class="result"></p>
+
+            <hr><br>
+
+
+            <!-- QUIZ 4 -->
+
+            <p><b>4. Should you share OTP with others?</b></p>
+
+            <button onclick="quiz4('wrong')">Yes</button>
+
+            <button onclick="quiz4('correct')">No</button>
+
+            <p id="result4" class="result"></p>
+
+            <hr><br>
+
+
+            <!-- QUIZ 5 -->
+
+            <p><b>5. What does HTTPS indicate?</b></p>
+
+            <button onclick="quiz5('correct')">Secure Website</button>
+
+            <button onclick="quiz5('wrong')">Fast Internet</button>
+
+            <button onclick="quiz5('wrong')">Virus Attack</button>
+
+            <p id="result5" class="result"></p>
+
+            <hr><br>
+
+
+            <!-- QUIZ 6 -->
+
+            <p><b>6. Which email looks suspicious?</b></p>
+
+            <button onclick="quiz6('wrong')">
+                support@gmail.com
+            </button>
+
+            <button onclick="quiz6('correct')">
+                bank-alert@verify-security123.com
+            </button>
+
+            <p id="result6" class="result"></p>
+
+        </div>
+
+
+        <!-- REAL WORLD EXAMPLE -->
+
+        <div class="card">
+
+            <h2>🌍 Real World Example</h2>
+
+            <p>
+                Many users receive fake bank emails asking them
+                to update account details through fake websites.
+                After entering login details, hackers steal the
+                information.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            Cyber Security Awareness Project | Mehnaz
+        </p>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function showTip(){
+
+            document.getElementById("tip").innerHTML =
+            "⚠️ Never click suspicious links or download unknown attachments.";
+
+        }
+
+
+        function quiz1(answer){
+
+            if(answer === 'correct'){
+                document.getElementById("result1").innerHTML =
+                "✅ Correct! Unknown links can be dangerous.";
+            }
+
+            else{
+                document.getElementById("result1").innerHTML =
+                "❌ Wrong! Avoid clicking unknown links.";
+            }
+
+        }
+
+
+        function quiz2(answer){
+
+            if(answer === 'correct'){
+                document.getElementById("result2").innerHTML =
+                "✅ Correct! Strong passwords use symbols and numbers.";
+            }
+
+            else{
+                document.getElementById("result2").innerHTML =
+                "❌ Weak Password!";
+            }
+
+        }
+
+
+        function quiz3(answer){
+
+            if(answer === 'correct'){
+                document.getElementById("result3").innerHTML =
+                "✅ Correct! Always check the website URL.";
+            }
+
+            else{
+                document.getElementById("result3").innerHTML =
+                "❌ Wrong Answer!";
+            }
+
+        }
+
+
+        function quiz4(answer){
+
+            if(answer === 'correct'){
+                document.getElementById("result4").innerHTML =
+                "✅ Correct! OTPs should never be shared.";
+            }
+
+            else{
+                document.getElementById("result4").innerHTML =
+                "❌ Wrong! OTPs are private.";
+            }
+
+        }
+
+
+        function quiz5(answer){
+
+            if(answer === 'correct'){
+                document.getElementById("result5").innerHTML =
+                "✅ Correct! HTTPS means secure communication.";
+            }
+
+            else{
+                document.getElementById("result5").innerHTML =
+                "❌ Wrong Answer!";
+            }
+
+        }
+
+
+        function quiz6(answer){
+
+            if(answer === 'correct'){
+                document.getElementById("result6").innerHTML =
+                "✅ Correct! This email looks suspicious.";
+            }
+
+            else{
+                document.getElementById("result6").innerHTML =
+                "❌ Wrong! Be careful with unknown emails.";
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
